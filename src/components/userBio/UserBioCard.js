@@ -1,4 +1,5 @@
 import React from "react";
+import "./UserBioCard.css";
 
 const UserBioCard = () => {
   return (

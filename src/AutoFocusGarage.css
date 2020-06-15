@@ -29,10 +29,6 @@ strong {
   font-weight: bold;
 }
 
-address {
-  margin: 0 0 1.5em;
-}
-
 img {
   display: block;
   border: 0;
@@ -47,5 +43,6 @@ img {
 .container-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-top: 10px;
 }

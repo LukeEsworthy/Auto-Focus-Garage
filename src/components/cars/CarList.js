@@ -18,7 +18,7 @@ const CarList = () => {
   return (
     <div className="container-cards">
       {cars.map((car) => (
-        <CarCard />
+        <CarCard key={cars.id} car={car} />
       ))}
     </div>
   );
