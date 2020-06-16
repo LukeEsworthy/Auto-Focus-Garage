@@ -1,5 +1,6 @@
 import React from "react";
 import "./CarCard.css";
+import { Link } from "react-router-dom";
 
 const CarCard = (props) => {
   return (
@@ -10,6 +11,9 @@ const CarCard = (props) => {
         </h3>
         <h3>Model: {props.car.modelName}</h3>
         <p>{props.car.carInfo}</p>
+        <Link to={`/cars/${props.car.id}`}>
+          <button>Details</button>
+        </Link>
         <button type="button" onClick={() => props.deleteCar(props.car.id)}>
           Delete
         </button>
