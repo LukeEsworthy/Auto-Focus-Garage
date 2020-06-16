@@ -3,6 +3,7 @@ import React from "react";
 import Home from "./home/UserBioHomePage";
 import CarList from "./cars/CarList";
 import CarDetail from "./cars/CarDetail";
+import CarForm from "./cars/CarForm1"
 
 const ApplicationViews = () => {
   return (
@@ -18,7 +19,7 @@ const ApplicationViews = () => {
         exact
         path="/cars"
         render={(props) => {
-          return <CarList />;
+          return <CarList {...props} />;
         }}
       />
       <Route
@@ -27,6 +28,12 @@ const ApplicationViews = () => {
           return (
             <CarDetail carId={parseInt(props.match.params.carId)} {...props} />
           );
+        }}
+      />
+      <Route
+        path="/cars/new"
+        render={(props) => {
+          return <CarForm {...props} />;
         }}
       />
     </React.Fragment>
