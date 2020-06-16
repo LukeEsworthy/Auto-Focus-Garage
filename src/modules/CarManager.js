@@ -21,4 +21,13 @@ export default {
       body: JSON.stringify(newAnimal),
     }).then((data) => data.json());
   },
+  update(editedCar) {
+    return fetch(`${remoteURL}/cars/${editedCar.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(editedCar),
+    }).then((data) => data.json());
+  },
 };
