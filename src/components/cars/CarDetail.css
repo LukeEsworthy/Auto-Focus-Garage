@@ -1,4 +1,10 @@
 #root > .card {
-  max-width: 400px;
+  max-width: 24%;
   margin: 10px auto;
+}
+
+button:disabled,
+button:disabled:hover {
+  background-color: darkgray;
+  text-decoration: none;
 }

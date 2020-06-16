@@ -24,7 +24,9 @@ const ApplicationViews = () => {
       <Route
         path="/cars/:carId(\d+)"
         render={(props) => {
-          return <CarDetail carId={parseInt(props.match.params.carId)} />;
+          return (
+            <CarDetail carId={parseInt(props.match.params.carId)} {...props} />
+          );
         }}
       />
     </React.Fragment>

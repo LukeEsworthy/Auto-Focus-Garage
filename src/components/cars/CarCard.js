@@ -14,9 +14,6 @@ const CarCard = (props) => {
         <Link to={`/cars/${props.car.id}`}>
           <button>Details</button>
         </Link>
-        <button type="button" onClick={() => props.deleteCar(props.car.id)}>
-          Delete
-        </button>
       </div>
     </div>
   );

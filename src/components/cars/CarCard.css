@@ -38,6 +38,7 @@
   font-size: 15px;
   border-radius: 5px;
   width: 25%;
+  text-decoration: none;
 }
 
 .card button:hover {
