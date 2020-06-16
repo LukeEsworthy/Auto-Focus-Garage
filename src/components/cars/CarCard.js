@@ -10,6 +10,9 @@ const CarCard = (props) => {
         </h3>
         <h3>Model: {props.car.modelName}</h3>
         <p>{props.car.carInfo}</p>
+        <button type="button" onClick={() => props.deleteCar(props.car.id)}>
+          Delete
+        </button>
       </div>
     </div>
   );
