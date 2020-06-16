@@ -1,61 +1,72 @@
 fieldset {
-    max-width: 40em;
-    padding: 4px;
-    margin: 2em auto;
-    border: 0 none;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 5px;
-    background: whitesmoke;
+  max-width: 75%;
+  padding: 4px;
+  margin: 2em auto;
+  border: 0 none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background: whitesmoke;
 }
 
-fieldset input, fieldset button, fieldset select{
-    box-sizing: border-box;
-    padding: .2em .4em;
-    margin: .2em 0;
-    outline: none;
-    box-shadow: none;
+fieldset input,
+fieldset button,
+fieldset select {
+  box-sizing: border-box;
+  padding: 0.2em 0.4em;
+  margin: 0.2em 0;
+  outline: none;
+  box-shadow: none;
 }
 
 fieldset button {
-    max-width: 9em;
-    padding: .5em;
-    margin: .3em auto;
-    background-color: #008c45;
-    border: none;
-    color: #f4f5f0;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    border-radius: 2px;
-    width: 100%;
-    cursor: pointer;
+  max-width: 9em;
+  padding: 0.5em;
+  margin: 0.3em auto;
+  background-color: #008c45;
+  border: none;
+  color: #f4f5f0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 2px;
+  width: 100%;
+  cursor: pointer;
 }
 
 fieldset label {
-    box-sizing: border-box;
-    user-select: none;
-    cursor: pointer;
-    text-align: left;
+  box-sizing: border-box;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: larger;
+  font-weight: bold;
 }
 fieldset input:focus + label {
-    color: #933;
+  color: #933;
 }
 
 fieldset .formgrid {
-    display: grid;
-    grid-template-columns: 1fr 1em 2fr;
-    grid-gap: .3em .6em;
-    grid-auto-flow: dense;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1em 2fr;
+  grid-gap: 0.3em 0.6em;
+  grid-auto-flow: dense;
+  align-items: center;
 }
 
-fieldset input, fieldset button, fieldset select {
-    grid-column: 2 /4;
-    width: auto;
-    margin: 0
+fieldset input,
+fieldset button,
+fieldset select {
+  grid-column: 2 /4;
+  width: auto;
+  margin: 5px;
 }
 
 fieldset .alignRight {
-    text-align: right;
+  text-align: right;
+}
+
+#carInfo {
+  width: auto;
+  height: 200px;
 }
