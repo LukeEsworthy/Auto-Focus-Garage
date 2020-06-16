@@ -39,6 +39,12 @@ const CarDetail = (props) => {
         <h3>{car.brandName}</h3>
         <h3>{car.modelName}</h3>
         <p>{car.carInfo}</p>
+        <button
+          type="button"
+          onClick={() => props.history.push(`/cars/${props.carId}/edit`)}
+        >
+          Edit
+        </button>
         <button type="button" disabled={isLoading} onClick={handleDelete}>
           Delete
         </button>
