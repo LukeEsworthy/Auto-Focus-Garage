@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CarCard from "./CarCard";
 import CarManager from "../../modules/CarManager";
 
-const CarList = () => {
+const CarList = (props) => {
   const [cars, setCars] = useState([]);
 
   const deleteCar = (id) => {
@@ -20,11 +20,24 @@ const CarList = () => {
   }, []);
 
   return (
-    <div className="container-cards">
-      {cars.map((car) => (
-        <CarCard key={cars.id} car={car} deleteCar={deleteCar} />
-      ))}
-    </div>
+    <>
+      <section className="section-content">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            props.history.push("/cars/new");
+          }}
+        >
+          Add Car
+        </button>
+      </section>
+      <div className="container-cards">
+        {cars.map((car) => (
+          <CarCard key={cars.id} car={car} deleteCar={deleteCar} />
+        ))}
+      </div>
+    </>
   );
 };
 export default CarList;

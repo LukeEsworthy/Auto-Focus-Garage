@@ -54,6 +54,12 @@
       "modelName": "P1",
       "carInfo": "The first time I saw a McLaren P1 was when I drove down to Atlanta, GA in June 2014 to see the Gumball 3000 during their rally from Miami to Ibiza. This was special because I came from Knoxville and my dad met me from Nashville, and we made it a guys' trip. We ogled at the cars the night they came in, went and grabbed some food and beer, and then woke up early the next morning to ogle at the cars some more as they headed out.",
       "userId": 1
+    },
+    {
+      "brandName": "Bugatti",
+      "modelName": "Chiron",
+      "carInfo": "The first time I saw a Bugatti Chiron was in April 2019. I was on a road trip with my girlfriend, going through Texas. The morning we left Houston to head to Galveston, we stopped by Ferrari of Houston because, well, I wanted to check out the Ferraris they had, and I also heard they had a Chiron. Turns out, they did, and it was probably my favorite Chiron spec I could imagine. The gentleman whose desk was right beside the Chiron was incredibly friendly and welcoming, and chatted to us for a while about it while he let us look it over. Another amazing dealership experience and absolutely stunning car, specced in Royal Blue visible carbon, black wheels, and Italian Red interior.",
+      "id": 5
     }
   ]
 }
