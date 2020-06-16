@@ -9,6 +9,7 @@ const CarDetail = (props) => {
     modelName: "",
     carInfo: "",
   });
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     CarManager.get(props.carId).then((car) => {
@@ -18,8 +19,16 @@ const CarDetail = (props) => {
         modelName: car.modelName,
         carInfo: car.carInfo,
       });
+      setIsLoading(false);
     });
   }, [props.carId]);
+
+  const handleDelete = () => {
+    setIsLoading(true);
+    CarManager.delete(props.carId).then(() => {
+      props.history.push("/cars");
+    });
+  };
 
   return (
     <div className="card">
@@ -30,6 +39,9 @@ const CarDetail = (props) => {
         <h3>{car.brandName}</h3>
         <h3>{car.modelName}</h3>
         <p>{car.carInfo}</p>
+        <button type="button" disabled={isLoading} onClick={handleDelete}>
+          Delete
+        </button>
       </div>
     </div>
   );
