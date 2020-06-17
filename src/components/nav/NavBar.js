@@ -8,12 +8,14 @@ const NavBar = () => {
       <div className="logo-and-title">
         <picture>
           <img
-            src={require("./AutoFocusGarageLogo.png")}
+            src={require("./Logo 2 final.png")}
             alt="Auto Focus Garage Logo"
           />
         </picture>
-        <h1 className="site-title">Auto Focus Garage
-        <h5 className="site-title">Your car spotting database</h5></h1>
+        <h1 className="site-title">
+          Auto Focus Garage
+          <h5 className="site-title">Your car spotting database</h5>
+        </h1>
       </div>
       <nav>
         <ul className="container">

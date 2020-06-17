@@ -55,42 +55,36 @@
 
 // export default CarForm2;
 
+import React, { useState, useEffect } from "react";
+import CarManager from "../../modules/CarManager";
+import "./CarForm.css";
 
-import React, { useState, useEffect } from "react"
-import CarManager from "../../modules/CarManager"
-import "./CarForm.css"
-
-const CarForm2 = props => {
+const CarForm2 = (props) => {
   const [car, setCar] = useState({ photo: "" });
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleFieldChange = evt => {
+  const handleFieldChange = (evt) => {
     const stateToChange = { ...car };
     stateToChange[evt.target.id] = evt.target.value;
     setCar(stateToChange);
   };
 
-  const updateExistingAnimal = evt => {
-    evt.preventDefault()
+  const updateExistingCar = (evt) => {
+    evt.preventDefault();
     setIsLoading(true);
 
-    // This is an edit, so we need the id
-    const editedAnimal = {
-      id: props.match.params.animalId,
-      name: animal.name,
-      breed: animal.breed
+    const editedCar = {
+      photo: car.photo,
     };
 
-    AnimalManager.update(editedAnimal)
-      .then(() => props.history.push("/animals"))
-  }
+    CarManager.update(editedCar).then(() => props.history.push("/cars"));
+  };
 
   useEffect(() => {
-    AnimalManager.get(props.match.params.animalId)
-      .then(animal => {
-        setAnimal(animal);
-        setIsLoading(false);
-      });
+    CarManager.get(props.match.params.carId).then((car) => {
+      setCar(car);
+      setIsLoading(false);
+    });
   }, []);
 
   return (
@@ -103,32 +97,25 @@ const CarForm2 = props => {
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="name"
-              value={animal.name}
+              id="photo"
+              value={car.photo}
             />
-            <label htmlFor="name">Animal name</label>
-
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={handleFieldChange}
-              id="breed"
-              value={animal.breed}
-            />
-            <label htmlFor="breed">Breed</label>
+            <label htmlFor="photo">Photo</label>
           </div>
           <div className="alignRight">
             <button
-              type="button" disabled={isLoading}
-              onClick={updateExistingAnimal}
+              type="button"
+              disabled={isLoading}
+              onClick={updateExistingCar}
               className="btn btn-primary"
-            >Submit</button>
+            >
+              Add
+            </button>
           </div>
         </fieldset>
       </form>
     </>
   );
-}
+};
 
-export default AnimalEditForm
+export default CarForm2;

@@ -16,20 +16,27 @@
       "id": 1,
       "name": "Luke Esworthy",
       "location": "Nashville area",
-      "equipment": "Equipment: Canon Rebel T3i, 50mm prime, 70-200mm, 18-50mm, Røde stereo mic, Audio Technica pro stereo mic, iPhone Xs Max",
+      "equipment": "Canon Rebel T3i, 50mm prime, 70-200mm, 18-50mm, Røde stereo mic, Audio Technica pro stereo mic, iPhone Xs Max",
       "faveCar": "Ferrari 430 Scuderia",
       "bio": "Bio: My passion for cars (or really anything with a motor) started when I was around 10. I begged my dad to let me start mowing the grass so that I could drive the riding lawn mower. When he finally gave in, we had to wrap iron chains around the seat because I didn't weigh enough and without the chain, the mower's safety sensor would cut the engine off. I finally got behind the wheel of a car when I was 14 and that excitement has never gone away. I have been fortunate to have driven and worked on a lot of different cars, and through that have grown an immense appreciation to the design and engineering put into cars. Cars truly are art, and they invoke many different emotions. The look, the sound, the feeling of smooth, cool, shiny metal and g-forces pushing you back into the seat, the smell of gasoline, exhaust and burnt rubber. Some of the best things in my life have happened in, around or because of cars, and those memories are ones that I will hold on to forever.",
       "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Patrick Dempsey",
+      "location": "South Florida",
+      "equipment": "iPhone",
+      "faveCar": "Porsche 959",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "userId": 2
     }
   ],
   "cars": [
     {
       "id": 1,
-      "photo": "",
       "brandName": "Ferrari",
       "modelName": "Enzo",
-      "carInfo": "I saw my first Ferrari Enzo on June 20, 2015, at the Newtown Car Show in Newtown, CT. It was displayed next to its younger brother, a LaFerrari owned by the same gentleman, both painted in Giallo Modena.",
-      "userId": 1
+      "carInfo": "I saw my first Ferrari Enzo on June 20, 2015, at the Newtown Car Show in Newtown, CT. It was displayed next to its younger brother, a LaFerrari owned by the same gentleman, both painted in Giallo Modena."
     },
     {
       "id": 2,
@@ -59,7 +66,8 @@
       "brandName": "Bugatti",
       "modelName": "Chiron",
       "carInfo": "The first time I saw a Bugatti Chiron was in April 2019. I was on a road trip with my girlfriend, going through Texas. The morning we left Houston to head to Galveston, we stopped by Ferrari of Houston because, well, I wanted to check out the Ferraris they had, and I also heard they had a Chiron. Turns out, they did, and it was probably my favorite Chiron spec I could imagine. The gentleman whose desk was right beside the Chiron was incredibly friendly and welcoming, and chatted to us for a while about it while he let us look it over. Another amazing dealership experience and absolutely stunning car, specced in Royal Blue visible carbon, black wheels, and Italian Red interior.",
-      "id": 5
+      "id": 5,
+      "userId": 1
     }
   ]
 }

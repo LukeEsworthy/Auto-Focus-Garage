@@ -42,12 +42,13 @@ const ApplicationViews = () => {
       />
       <Route
         exact
-        path="/cars/new2"
+        path="/cars/:carId(\d+)/new2"
         render={(props) => {
           return <CarForm2 {...props} />;
         }}
       />
       <Route
+        exact
         path="/cars/:carId(\d+)/edit"
         render={(props) => {
           return <CarEditForm {...props} />;

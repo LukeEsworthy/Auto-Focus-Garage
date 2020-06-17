@@ -22,7 +22,10 @@ const CarForm1 = (props) => {
       window.alert("Please fill out all fields");
     } else {
       setIsLoading(true);
-      CarManager.post(car).then(() => props.history.push("/cars/new2"));
+      CarManager.post(car).then(() =>
+        props.history.push(`/cars/${props.carId}/new2`)
+      );
+      console.log(car);
     }
   };
 
