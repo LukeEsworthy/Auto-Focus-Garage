@@ -34,7 +34,7 @@ const CarList = (props) => {
       </section>
       <div className="container-cards">
         {cars.map((car) => (
-          <CarCard key={cars.id} car={car} deleteCar={deleteCar} />
+          <CarCard key={cars.id} car={car} deleteCar={deleteCar} {...props} />
         ))}
       </div>
     </>

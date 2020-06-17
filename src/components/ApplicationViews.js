@@ -5,6 +5,7 @@ import CarList from "./cars/CarList";
 import CarDetail from "./cars/CarDetail";
 import CarForm1 from "./cars/CarForm1";
 import CarForm2 from "./cars/CarForm2";
+import CarEditForm from "./cars/CarEditForm";
 
 const ApplicationViews = () => {
   return (
@@ -24,6 +25,7 @@ const ApplicationViews = () => {
         }}
       />
       <Route
+        exact
         path="/cars/:carId(\d+)"
         render={(props) => {
           return (
@@ -40,9 +42,16 @@ const ApplicationViews = () => {
       />
       <Route
         exact
-        path="/cars/new2"
+        path="/cars/:carId(\d+)/new2"
         render={(props) => {
           return <CarForm2 {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/cars/:carId(\d+)/edit"
+        render={(props) => {
+          return <CarEditForm {...props} />;
         }}
       />
     </React.Fragment>
