@@ -2,6 +2,7 @@ import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/UserBioHomePage";
 import CarList from "./cars/CarList";
+import CarForm from "./cars/CarForm";
 import CarDetail from "./cars/CarDetail";
 import CarEditForm from "./cars/CarEditForm";
 
@@ -20,6 +21,13 @@ const ApplicationViews = () => {
         path="/cars"
         render={(props) => {
           return <CarList {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/cars/new"
+        render={(props) => {
+          return <CarForm {...props} />;
         }}
       />
       <Route

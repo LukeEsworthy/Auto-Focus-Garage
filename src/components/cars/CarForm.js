@@ -1,62 +1,52 @@
 import React, { useState, useEffect } from "react";
-import "./CarForm.css";
-import Search from "./CarSearch";
+import Search from "./CarFormSearch";
+import PhotoResult from "./CarFormSearchResults";
+import UnsplashAPIKey from "../../APIKeys";
+import CarManager from "../../modules/CarManager";
 
+const UnsplashAPI_URL = `https://api.unsplash.com/search/photos?query=cars&client_id=${UnsplashAPIKey}`;
 
-const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=4a3b711b"; // you should replace this with yours
-
-
-const App = () => {
+const CarForm = () => {
   const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
+  const [photos, setPhotos] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
 
-    useEffect(() => {
-    fetch(MOVIE_API_URL)
-      .then(response => response.json())
-      .then(jsonResponse => {
-        setMovies(jsonResponse.Search);
+  useEffect(() => {
+    fetch(UnsplashAPI_URL)
+      .then((response) => response.json())
+      .then((jsonResponse) => {
+        setPhotos(jsonResponse.Search);
         setLoading(false);
       });
   }, []);
 
-    const search = searchValue => {
+  const search = (searchValue) => {
     setLoading(true);
     setErrorMessage(null);
 
-    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
-      .then(response => response.json())
-      .then(jsonResponse => {
+    CarManager.getPhotos(searchValue)
+      .then((response) => response.json())
+      .then((jsonResponse) => {
         if (jsonResponse.Response === "True") {
-          setMovies(jsonResponse.Search);
+          setPhotos(jsonResponse.Search);
           setLoading(false);
         } else {
           setErrorMessage(jsonResponse.Error);
           setLoading(false);
         }
       });
-  	};
+  };
 
-    
-    return (
-     <div className="App">
-      <Header text="HOOKED" />
+  return (
+    <div className="add-car-form">
       <Search search={search} />
-      <p className="App-intro">Sharing a few of our favourite movies</p>
-      <div className="movies">
-        {loading && !errorMessage ? (
-         <span>loading...</span>
-         ) : errorMessage ? (
-          <div className="errorMessage">{errorMessage}</div>
-        ) : (
-          movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} movie={movie} />
-          ))
-        )}
+      <div className="photos">
+        photos.map((photo) => (
+        <PhotoResult key={photos.id} />
+        )) )}
       </div>
     </div>
   );
 };
 
-
-export default App;
+export default CarForm;
