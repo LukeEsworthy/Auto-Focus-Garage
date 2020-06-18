@@ -34,6 +34,8 @@ export default {
     }).then((data) => data.json());
   },
   getPhotos(searchRequest) {
-    return fetch(`${UnsplashURL}${searchRequest}&client_id=${UnsplashAPIKey}`);
+    return fetch(
+      `${UnsplashURL}${searchRequest}&client_id=${UnsplashAPIKey}`
+    ).then((result) => result.json());
   },
 };
