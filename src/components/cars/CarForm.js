@@ -55,42 +55,72 @@
 
 // export default CarForm;
 
+// import React, { useState, useEffect } from "react";
+// import Search from "./CarFormSearch";
+// import PhotoResult from "./CarFormSearchResults";
+// import CarManager from "../../modules/CarManager";
+
+// const CarForm = (props) => {
+//   const [photos, setPhotos] = useState([]);
+
+//   const search = (searchValue) => {
+//     CarManager.getPhotos(searchValue).then((photosFromAPI) => {
+//       setPhotos(photosFromAPI);
+//     });
+//   };
+
+//   return (
+//     <div className="CarFormCard">
+//       <Search search={search} />
+//       <div className="carphotos">
+//         {photos.map((photo) => (
+//           <PhotoResult />
+//         ))}
+//       </div>
+//     </div>
+//   );
+
+// const handleFieldChange = (evt) => {
+//     const stateToChange = {...photos};
+//     stateToChange[evt.target.id] = evt.target.value;
+//     setPhotos(stateToChange);
+// }
+
+// const constructNewCarCard = (evt) => {
+//     evt.preventDefault();
+//     setIsLoading(true);
+//     CarManager.getPhotos()
+// }
+// };
+
+// export default CarForm;
+
 import React, { useState, useEffect } from "react";
-import Search from "./CarFormSearch";
 import PhotoResult from "./CarFormSearchResults";
 import CarManager from "../../modules/CarManager";
 
 const CarForm = (props) => {
-  const [photos, setPhotos] = useState([]);
+  const [ferrariPics, setFerrariPics] = useState([]);
 
-  const search = (searchValue) => {
-    CarManager.getPhotos(searchValue).then((photosFromAPI) => {
-      setPhotos(photosFromAPI);
+  const displayFerraris = () => {
+    return CarManager.getFerrari().then((ferrarisFromAPI) => {
+      setFerrariPics(ferrarisFromAPI.results);
     });
   };
 
+  useEffect(() => {
+    displayFerraris();
+  }, []);
+
   return (
     <div className="CarFormCard">
-      <Search search={search} />
-      <div className="carphotos">
-        {photos.map((photo) => (
-          <PhotoResult />
+      <div className="ferraripics">
+        {ferrariPics.map((ferrari) => (
+          <PhotoResult key={ferrari.id} ferrari={ferrari} {...props} />
         ))}
       </div>
     </div>
   );
-
-  // const handleFieldChange = (evt) => {
-  //     const stateToChange = {...photos};
-  //     stateToChange[evt.target.id] = evt.target.value;
-  //     setPhotos(stateToChange);
-  // }
-
-  // const constructNewCarCard = (evt) => {
-  //     evt.preventDefault();
-  //     setIsLoading(true);
-  //     CarManager.getPhotos()
-  // }
 };
 
 export default CarForm;

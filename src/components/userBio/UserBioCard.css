@@ -4,13 +4,14 @@
   border-radius: 7.5px;
   background: white;
   margin-bottom: 5px;
+  min-width: 500px;
 }
 
 .card-content {
   padding: 5px;
 }
 
-.card-content h3 {
+.card-content h5 {
   margin-top: 0;
   font-weight: bold;
   color: #d40000;
@@ -21,6 +22,11 @@
   font-size: 80%;
   color: darkslategrey;
   text-align: center;
+  font-weight: bold;
+}
+
+.card-content span {
+  font-weight: normal;
 }
 
 .content-carMake {
