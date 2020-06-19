@@ -1,7 +1,7 @@
 import UnsplashAPIKey from "../APIKeys";
 
 const remoteURL = "http://localhost:5002";
-const UnsplashURL = "https://api.unsplash.com/search/photos?per_page=25&query=";
+const UnsplashURL = "https://api.unsplash.com/search/photos?per_page=30&query=";
 
 export default {
   get(id) {

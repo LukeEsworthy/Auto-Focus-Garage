@@ -70,3 +70,17 @@ fieldset .alignRight {
   width: auto;
   height: 200px;
 }
+
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+.picsFromAPI {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

@@ -1,11 +1,15 @@
 import React from "react";
+import "./CarForm.css";
 
 const PhotoResult = (props) => {
   return (
     <div className="card car-photo-card">
       <div className="card-content">
         <picture>
-          <img src={props.ferrari.urls.small} alt={props.ferrari.description} />
+          <img
+            src={props.resultPics.urls.small}
+            alt={props.resultPics.description}
+          />
         </picture>
         <button>Save</button>
       </div>

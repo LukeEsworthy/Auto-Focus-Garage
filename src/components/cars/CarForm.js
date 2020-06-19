@@ -96,29 +96,48 @@
 // export default CarForm;
 
 import React, { useState, useEffect } from "react";
+import Search from "./CarFormSearch";
 import PhotoResult from "./CarFormSearchResults";
 import CarManager from "../../modules/CarManager";
+import "./CarForm.css";
 
 const CarForm = (props) => {
-  const [ferrariPics, setFerrariPics] = useState([]);
+  // const [ferrariPics, setFerrariPics] = useState([]);
+  const [picsFromAPI, setPicsFromAPI] = useState([]);
 
-  const displayFerraris = () => {
-    return CarManager.getFerrari().then((ferrarisFromAPI) => {
-      setFerrariPics(ferrarisFromAPI.results);
+  // const displayFerraris = () => {
+  //   return CarManager.getFerrari().then((ferrarisFromAPI) => {
+  //     setFerrariPics(ferrarisFromAPI.results);
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   displayFerraris();
+  // }, []);
+
+  const search = (searchValue) => {
+    CarManager.getPhotos(searchValue).then((searchResults) => {
+      setPicsFromAPI(searchResults.results);
     });
   };
 
   useEffect(() => {
-    displayFerraris();
+    search();
   }, []);
 
   return (
     <div className="CarFormCard">
-      <div className="ferraripics">
+      <Search search={search} />
+      <div className="picsFromAPI">
+        {picsFromAPI.map((resultPics) => (
+          <PhotoResult key={resultPics.id} resultPics={resultPics} {...props} />
+        ))}
+      </div>
+      {/* <div className="ferraripics">
         {ferrariPics.map((ferrari) => (
           <PhotoResult key={ferrari.id} ferrari={ferrari} {...props} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
