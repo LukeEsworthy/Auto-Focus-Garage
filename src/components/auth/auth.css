@@ -1,0 +1,13 @@
+.landingPage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.loginButton,
+.registerButton {
+  flex-basis: 25%;
+  margin-top: 200px;
+  font-size: 24px;
+}

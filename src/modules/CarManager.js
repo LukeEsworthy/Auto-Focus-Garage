@@ -33,6 +33,15 @@ export default {
       body: JSON.stringify(editedCar),
     }).then((data) => data.json());
   },
+  getRandomCarId() {
+    return fetch(`${remoteURL}/cars`)
+      .then((result) => result.json())
+      .then((cars) => {
+        const randomIndexNum = Math.floor(Math.random() * cars.length);
+        const randomCar = cars[randomIndexNum];
+        return randomCar.id;
+      });
+  },
   getPhotos(searchRequest) {
     return fetch(
       `${UnsplashURL}${searchRequest}&client_id=${UnsplashAPIKey}`

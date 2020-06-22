@@ -34,15 +34,19 @@
   "cars": [
     {
       "id": 1,
+      "photo": "",
       "brandName": "Ferrari",
       "modelName": "Enzo",
-      "carInfo": "I saw my first Ferrari Enzo on June 20, 2015, at the Newtown Car Show in Newtown, CT. It was displayed next to its younger brother, a LaFerrari owned by the same gentleman, both painted in Giallo Modena."
+      "carInfo": "I saw my first Ferrari Enzo on June 20, 2015, at the Newtown Car Show in Newtown, CT. It was displayed next to its younger brother, a LaFerrari owned by the same gentleman, both painted in Giallo Modena.",
+      "userId": 2
     },
     {
       "id": 2,
+      "photo": "",
       "brandName": "Ferrari",
       "modelName": "LaFerrari",
-      "carInfo": "On June 20, 2015 I saw a Ferrari LaFerrari for the first time. I was in Newtown, CT for the Newtown Car Show. The owner also brought out his Ferrari Enzo; both cars were painted in Giallo Modena."
+      "carInfo": "On June 20, 2015 I saw a Ferrari LaFerrari for the first time. I was in Newtown, CT for the Newtown Car Show. The owner also brought out his Ferrari Enzo; both cars were painted in Giallo Modena.",
+      "userId": 2
     },
     {
       "id": 3,
@@ -65,6 +69,7 @@
       "modelName": "Chiron",
       "carInfo": "The first time I saw a Bugatti Chiron was in April 2019. I was on a road trip with my girlfriend, going through Texas. The morning we left Houston to head to Galveston, we stopped by Ferrari of Houston because, well, I wanted to check out the Ferraris they had, and I also heard they had a Chiron. Turns out, they did, and it was probably my favorite Chiron spec I could imagine. The gentleman whose desk was right beside the Chiron was incredibly friendly and welcoming, and chatted to us for a while about it while he let us look it over. Another amazing dealership experience and absolutely stunning car, specced in Royal Blue visible carbon, black wheels, and Italian Red interior.",
       "id": 5,
+      "photo": "",
       "userId": 1
     }
   ]
