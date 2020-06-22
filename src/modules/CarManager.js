@@ -15,13 +15,13 @@ export default {
       method: "DELETE",
     }).then((result) => result.json());
   },
-  post(newAnimal) {
+  post(newCar) {
     return fetch(`${remoteURL}/cars`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newAnimal),
+      body: JSON.stringify(newCar),
     }).then((data) => data.json());
   },
   update(editedCar) {

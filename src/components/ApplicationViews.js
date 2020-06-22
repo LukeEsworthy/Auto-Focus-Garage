@@ -6,6 +6,7 @@ import CarForm from "./cars/CarForm";
 import CarDetail from "./cars/CarDetail";
 import CarEditForm from "./cars/CarEditForm";
 import Login from "./auth/login";
+import Register from "./auth/register";
 import LandingPage from "./auth/landingPage";
 
 const ApplicationViews = (props) => {
@@ -78,6 +79,12 @@ const ApplicationViews = (props) => {
         path="/login"
         render={(props) => {
           return <Login setUser={setUser} {...props} />;
+        }}
+      />
+      <Route
+        path="/register"
+        render={(props) => {
+          return <Register setUser={setUser} {...props} />;
         }}
       />
     </React.Fragment>
