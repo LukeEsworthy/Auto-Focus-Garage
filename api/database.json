@@ -40,11 +40,9 @@
     },
     {
       "id": 2,
-      "photo": "",
       "brandName": "Ferrari",
       "modelName": "LaFerrari",
-      "carInfo": "On June 20, 2015 I saw a Ferrari LaFerrari for the first time. I was in Newtown, CT for the Newtown Car Show. The owner also brought out his Ferrari Enzo; both cars were painted in Giallo Modena.",
-      "userId": 1
+      "carInfo": "On June 20, 2015 I saw a Ferrari LaFerrari for the first time. I was in Newtown, CT for the Newtown Car Show. The owner also brought out his Ferrari Enzo; both cars were painted in Giallo Modena."
     },
     {
       "id": 3,

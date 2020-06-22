@@ -1,4 +1,7 @@
+import UnsplashAPIKey from "../APIKeys";
+
 const remoteURL = "http://localhost:5002";
+const UnsplashURL = "https://api.unsplash.com/search/photos?per_page=30&query=";
 
 export default {
   get(id) {
@@ -29,5 +32,15 @@ export default {
       },
       body: JSON.stringify(editedCar),
     }).then((data) => data.json());
+  },
+  getPhotos(searchRequest) {
+    return fetch(
+      `${UnsplashURL}${searchRequest}&client_id=${UnsplashAPIKey}`
+    ).then((result) => result.json());
+  },
+  getFerrari() {
+    return fetch(
+      `${UnsplashURL}ferrari&client_id=${UnsplashAPIKey}`
+    ).then((result) => result.json());
   },
 };
