@@ -1,7 +1,10 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-const Login = props => {
-  const [credentials, setCredentials] = useState({ userName: "", password: "" });
+const Login = (props) => {
+  const [credentials, setCredentials] = useState({
+    userName: "",
+    password: "",
+  });
 
   const handleFieldChange = (evt) => {
     const stateToChange = { ...credentials };
@@ -11,28 +14,32 @@ const Login = props => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-    );
-    props.history.push("/");
-  }
+    sessionStorage.setItem("credentials", JSON.stringify(credentials));
+    props.history.push("/home");
+  };
 
   return (
     <form onSubmit={handleLogin}>
       <fieldset>
         <h3>Please sign in</h3>
         <div className="formgrid">
-          <input onChange={handleFieldChange} type="userName"
+          <input
+            onChange={handleFieldChange}
+            type="userName"
             id="userName"
             placeholder="Username"
-            required="" autoFocus="" />
+            required=""
+            autoFocus=""
+          />
           <label htmlFor="inputUserName">Username</label>
 
-          <input onChange={handleFieldChange} type="password"
+          <input
+            onChange={handleFieldChange}
+            type="password"
             id="password"
             placeholder="Password"
-            required="" />
+            required=""
+          />
           <label htmlFor="inputPassword">Password</label>
         </div>
         <button type="submit">Sign in</button>
