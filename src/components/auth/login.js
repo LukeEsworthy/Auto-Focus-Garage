@@ -14,7 +14,7 @@ const Login = (props) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    sessionStorage.setItem("credentials", JSON.stringify(credentials));
+    props.setUser(credentials);
     props.history.push("/home");
   };
 

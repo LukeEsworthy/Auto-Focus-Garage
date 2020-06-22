@@ -1,8 +1,14 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const handleLogout = () => {
+    props.clearUser();
+    props.history.push("/");
+  };
+
   return (
     <header>
       <div className="logo-and-title">
@@ -19,21 +25,31 @@ const NavBar = () => {
       </div>
       <nav>
         <ul className="container">
-          <li>
-            <Link className="nav-link" to="/home">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link className="nav-link" to="/cars">
-              Garage
-            </Link>
-          </li>
-          <li>Logout</li>
+          {props.hasUser ? (
+            <li>
+              <Link className="nav-link" to="/home">
+                Home
+              </Link>
+            </li>
+          ) : null}
+          {props.hasUser ? (
+            <li>
+              <Link className="nav-link" to="/cars">
+                Garage
+              </Link>
+            </li>
+          ) : null}
+          {props.hasUser ? (
+            <li>
+              <span className="nav-link" onClick={handleLogout}>
+                Logout
+              </span>
+            </li>
+          ) : null}
         </ul>
       </nav>
     </header>
   );
 };
 
-export default NavBar;
+export default withRouter(NavBar);

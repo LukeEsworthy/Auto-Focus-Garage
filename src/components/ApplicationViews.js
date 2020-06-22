@@ -8,8 +8,9 @@ import CarEditForm from "./cars/CarEditForm";
 import Login from "./auth/login";
 import LandingPage from "./auth/landingPage";
 
-const ApplicationViews = () => {
-  const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+const ApplicationViews = (props) => {
+  const hasUser = props.hasUser;
+  const setUser = props.setUser;
 
   return (
     <React.Fragment>
@@ -17,7 +18,7 @@ const ApplicationViews = () => {
         exact
         path="/home"
         render={(props) => {
-          if (isAuthenticated()) {
+          if (hasUser) {
             return <Home {...props} />;
           } else {
             return <Redirect to="/login" />;
@@ -28,7 +29,7 @@ const ApplicationViews = () => {
         exact
         path="/cars"
         render={(props) => {
-          if (isAuthenticated()) {
+          if (hasUser) {
             return <CarList {...props} />;
           } else {
             return <Redirect to="/login" />;
@@ -39,7 +40,7 @@ const ApplicationViews = () => {
         exact
         path="/cars/new"
         render={(props) => {
-          if (isAuthenticated()) {
+          if (hasUser) {
             return <CarForm {...props} />;
           } else {
             return <Redirect to="/login" />;
@@ -59,19 +60,24 @@ const ApplicationViews = () => {
         exact
         path="/cars/:carId(\d+)/edit"
         render={(props) => {
-          if (isAuthenticated()) {
+          if (hasUser) {
             return <CarEditForm {...props} />;
           } else {
             return <Redirect to="/login" />;
           }
         }}
       />
-      <Route path="/login" component={Login} />
       <Route
         exact
         path="/"
         render={(props) => {
           return <LandingPage {...props} />;
+        }}
+      />
+      <Route
+        path="/login"
+        render={(props) => {
+          return <Login setUser={setUser} {...props} />;
         }}
       />
     </React.Fragment>

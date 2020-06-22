@@ -36,13 +36,15 @@
       "id": 1,
       "brandName": "Ferrari",
       "modelName": "Enzo",
-      "carInfo": "I saw my first Ferrari Enzo on June 20, 2015, at the Newtown Car Show in Newtown, CT. It was displayed next to its younger brother, a LaFerrari owned by the same gentleman, both painted in Giallo Modena."
+      "carInfo": "I saw my first Ferrari Enzo on June 20, 2015, at the Newtown Car Show in Newtown, CT. It was displayed next to its younger brother, a LaFerrari owned by the same gentleman, both painted in Giallo Modena.",
+      "userId": 2
     },
     {
       "id": 2,
       "brandName": "Ferrari",
       "modelName": "LaFerrari",
-      "carInfo": "On June 20, 2015 I saw a Ferrari LaFerrari for the first time. I was in Newtown, CT for the Newtown Car Show. The owner also brought out his Ferrari Enzo; both cars were painted in Giallo Modena."
+      "carInfo": "On June 20, 2015 I saw a Ferrari LaFerrari for the first time. I was in Newtown, CT for the Newtown Car Show. The owner also brought out his Ferrari Enzo; both cars were painted in Giallo Modena.",
+      "userId": 2
     },
     {
       "id": 3,
