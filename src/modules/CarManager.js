@@ -42,6 +42,11 @@ export default {
         return randomCar.id;
       });
   },
+  getUserCars(id) {
+    return fetch(`${remoteURL}/cars?userId=${id}`).then((result) =>
+      result.json()
+    );
+  },
   getPhotos(searchRequest) {
     return fetch(
       `${UnsplashURL}${searchRequest}&client_id=${UnsplashAPIKey}`
