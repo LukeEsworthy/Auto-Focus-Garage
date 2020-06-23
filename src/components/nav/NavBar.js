@@ -20,7 +20,7 @@ const NavBar = (props) => {
         </picture>
         <h1 className="site-title">
           Auto Focus Garage
-          <h5 className="site-title">Your car spotting database</h5>
+          <p className="site-title">Your car spotting database</p>
         </h1>
       </div>
       <nav>

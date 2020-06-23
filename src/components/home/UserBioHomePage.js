@@ -2,13 +2,27 @@ import React, { useState, useEffect } from "react";
 import UserBioCard from "../userBio/UserBioCard";
 import CarSpotlight from "../cars/CarSpotlight";
 import CarManager from "../../modules/CarManager";
+import UserBioManager from "../../modules/UserBioManager";
 
-const Home = () => {
+const Home = (props) => {
   const [spotlightId, setSpotlightId] = useState(0);
+  const [bios, setBios] = useState([]);
 
   const refreshSpotlight = () => {
     CarManager.getRandomCarId().then(setSpotlightId);
   };
+
+  const useUserId = sessionStorage.getItem("credentials");
+
+  const getBios = () => {
+    return UserBioManager.getUserBiosById(useUserId).then((bioFromAPI) => {
+      setBios(bioFromAPI);
+    });
+  };
+
+  useEffect(() => {
+    getBios();
+  });
 
   useEffect(() => {
     refreshSpotlight();
@@ -17,7 +31,9 @@ const Home = () => {
   return (
     <>
       <h2>I will put UserBioCard and random rotating CarCards here</h2>
-      <UserBioCard />
+      {bios.map((bio) => (
+        <UserBioCard key={bios.id} bio={bio} {...props} />
+      ))}
       <button onClick={refreshSpotlight}>Next Car</button>
       {spotlightId && <CarSpotlight carId={spotlightId} />}
     </>

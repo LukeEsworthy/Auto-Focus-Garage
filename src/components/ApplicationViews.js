@@ -1,6 +1,7 @@
 import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/UserBioHomePage";
+import UserBioForm from "./userBio/UserBioForm";
 import CarList from "./cars/CarList";
 import CarForm from "./cars/CarForm";
 import CarDetail from "./cars/CarDetail";
@@ -8,7 +9,6 @@ import CarEditForm from "./cars/CarEditForm";
 import Login from "./auth/login";
 import Register from "./auth/register";
 import LandingPage from "./auth/landingPage";
-import UserManager from "../modules/UserManager";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -22,6 +22,17 @@ const ApplicationViews = (props) => {
         render={(props) => {
           if (hasUser) {
             return <Home {...props} />;
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      />
+      <Route
+        exact
+        path="/users/new"
+        render={(props) => {
+          if (hasUser) {
+            return <UserBioForm {...props} />;
           } else {
             return <Redirect to="/login" />;
           }
