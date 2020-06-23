@@ -10,4 +10,9 @@ export default {
       body: JSON.stringify(newUser),
     }).then((data) => data.json());
   },
+  getUserByUsername(username) {
+    return fetch(`${remoteURL}/users/?username=${username}`).then((data) =>
+      data.json()
+    );
+  },
 };
