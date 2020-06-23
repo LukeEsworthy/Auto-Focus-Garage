@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UserManager from "../../modules/UserManager";
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({
@@ -14,8 +15,14 @@ const Login = (props) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    props.setUser(credentials);
-    props.history.push("/home");
+    UserManager.getUserByUsername(credentials.userName).then((result) => {
+      if (result[0].password === credentials.password) {
+        props.setUser(result[0].id);
+        props.history.push("/home");
+      } else {
+        window.alert("Incorrect Password.");
+      }
+    });
   };
 
   return (

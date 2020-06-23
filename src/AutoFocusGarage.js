@@ -9,8 +9,8 @@ function App() {
 
   const [hasUser, setHasUser] = useState(isAuthenticated());
 
-  const setUser = (user) => {
-    sessionStorage.setItem("credentials", JSON.stringify(user));
+  const setUser = (userId) => {
+    sessionStorage.setItem("credentials", userId);
     setHasUser(isAuthenticated());
   };
 

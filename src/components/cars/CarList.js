@@ -9,8 +9,10 @@ const CarList = (props) => {
     CarManager.delete(id).then(() => CarManager.getAll().then(setCars));
   };
 
+  const useUserId = sessionStorage.getItem("credentials");
+
   const getCars = () => {
-    return CarManager.getAll().then((carsFromAPI) => {
+    return CarManager.getUserCars(useUserId).then((carsFromAPI) => {
       setCars(carsFromAPI);
     });
   };

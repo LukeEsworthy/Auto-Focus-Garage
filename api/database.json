@@ -9,6 +9,11 @@
       "id": 2,
       "username": "vtecyo",
       "password": "1212"
+    },
+    {
+      "userName": "tifosi2",
+      "password": "1234",
+      "id": 3
     }
   ],
   "userBios": [

@@ -31,7 +31,7 @@ const CarEditForm = (props) => {
       setCar(car);
       setIsLoading(false);
     });
-  }, []);
+  }, [props.match.params.carId]);
 
   return (
     <>

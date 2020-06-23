@@ -6,7 +6,9 @@ import CarForm from "./cars/CarForm";
 import CarDetail from "./cars/CarDetail";
 import CarEditForm from "./cars/CarEditForm";
 import Login from "./auth/login";
+import Register from "./auth/register";
 import LandingPage from "./auth/landingPage";
+import UserManager from "../modules/UserManager";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
@@ -30,7 +32,7 @@ const ApplicationViews = (props) => {
         path="/cars"
         render={(props) => {
           if (hasUser) {
-            return <CarList {...props} />;
+            return <CarList {...props} hasUser={hasUser} />;
           } else {
             return <Redirect to="/login" />;
           }
@@ -78,6 +80,12 @@ const ApplicationViews = (props) => {
         path="/login"
         render={(props) => {
           return <Login setUser={setUser} {...props} />;
+        }}
+      />
+      <Route
+        path="/register"
+        render={(props) => {
+          return <Register setUser={setUser} {...props} />;
         }}
       />
     </React.Fragment>
