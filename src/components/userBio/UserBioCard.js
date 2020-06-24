@@ -5,15 +5,15 @@ const UserBioCard = (props) => {
   return (
     <>
       <section>
-        <button
+        {/* <button
           type="button"
           className="btn"
           onClick={() => {
             props.history.push("/users/new");
           }}
         >
-          Add/Edit Bio
-        </button>
+          Edit Bio
+        </button> */}
       </section>
       <div className="card">
         <div className="card-content">
@@ -33,6 +33,12 @@ const UserBioCard = (props) => {
             Bio: <span>{props.bio.bio}</span>
           </p>
         </div>
+        <button
+          type="button"
+          onClick={() => props.history.push(`/userBios/${props.bio.id}/edit`)}
+        >
+          Edit
+        </button>
       </div>
     </>
   );

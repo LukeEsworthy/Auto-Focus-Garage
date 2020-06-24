@@ -22,7 +22,7 @@ const Home = (props) => {
 
   useEffect(() => {
     getBios();
-  });
+  }, []);
 
   useEffect(() => {
     refreshSpotlight();
@@ -31,9 +31,22 @@ const Home = (props) => {
   return (
     <>
       <h2>I will put UserBioCard and random rotating CarCards here</h2>
-      {bios.map((bio) => (
-        <UserBioCard key={bios.id} bio={bio} {...props} />
-      ))}
+      <section className="add-bio-button">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            props.history.push("/userBios/new");
+          }}
+        >
+          Add Bio
+        </button>
+      </section>
+      <div className="bio-card-container">
+        {bios.map((bio) => (
+          <UserBioCard key={bios.id} bio={bio} {...props} />
+        ))}
+      </div>
       <button onClick={refreshSpotlight}>Next Car</button>
       {spotlightId && <CarSpotlight carId={spotlightId} />}
     </>

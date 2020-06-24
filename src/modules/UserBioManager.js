@@ -12,4 +12,13 @@ export default {
       result.json()
     );
   },
+  post(newUserBio) {
+    return fetch(`${remoteURL}/userBios`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUserBio),
+    }).then((data) => data.json());
+  },
 };

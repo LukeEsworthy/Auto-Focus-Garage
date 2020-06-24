@@ -19,7 +19,7 @@ const CarList = (props) => {
 
   useEffect(() => {
     getCars();
-  }, );
+  }, []);
 
   return (
     <>

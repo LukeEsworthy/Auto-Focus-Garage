@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import UserBioManager from "../../modules/UserBioManager";
 import "./UserBioForm.css";
 
-const UserBioForm = (props) => {
+const UserBioEditForm = (props) => {
   const [userBio, setUserBio] = useState({
     name: "",
     location: "",
@@ -19,24 +19,31 @@ const UserBioForm = (props) => {
     setUserBio(stateToChange);
   };
 
-  /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
-   */
-  const createNewUserBio = (evt) => {
+  const updateExistingUserBio = (evt) => {
     evt.preventDefault();
-    if (
-      userBio.name === "" ||
-      userBio.location === "" ||
-      userBio.equipment === "" ||
-      userBio.faveCar === "" ||
-      userBio.bio === ""
-    ) {
-      window.alert("Please fill out all sections; we want to get to know you!");
-    } else {
-      setIsLoading(true);
-      // Create the animal and redirect user to animal list
-      UserBioManager.post(userBio).then(() => props.history.push("/home"));
-    }
+    setIsLoading(true);
+
+    // This is an edit, so we need the id
+    const editedUserBio = {
+      id: props.match.params.userBioId,
+      name: userBio.name,
+      location: userBio.location,
+      equipment: userBio.equipment,
+      faveCar: userBio.faveCar,
+      bio: userBio.bio,
+    };
+
+    UserBioManager.update(editedUserBio).then(() =>
+      props.history.push("/home")
+    );
   };
+
+  useEffect(() => {
+    UserBioManager.get(props.match.params.userBioId).then((userBio) => {
+      setUserBio(userBioId);
+      setIsLoading(false);
+    });
+  }, []);
 
   return (
     <>
@@ -46,41 +53,46 @@ const UserBioForm = (props) => {
             <input
               type="text"
               required
+              className="form-control"
               onChange={handleFieldChange}
               id="name"
-              placeholder="User name"
+              value={userBio.name}
             />
             <label htmlFor="name">Name</label>
             <input
               type="text"
               required
+              className="form-control"
               onChange={handleFieldChange}
               id="location"
-              placeholder="Location"
+              value={userBio.location}
             />
             <label htmlFor="location">Location</label>
             <input
               type="text"
               required
+              className="form-control"
               onChange={handleFieldChange}
               id="equipment"
-              placeholder="Equipment"
+              value={userBio.equipment}
             />
             <label htmlFor="equipment">Equipment</label>
             <input
               type="text"
               required
+              className="form-control"
               onChange={handleFieldChange}
               id="faveCar"
-              placeholder="Favorite Car"
+              value={userBio.faveCar}
             />
             <label htmlFor="faveCar">Favorite Car</label>
             <input
               type="text"
               required
+              className="form-control"
               onChange={handleFieldChange}
               id="bio"
-              placeholder="Bio"
+              value={userBio.bio}
             />
             <label htmlFor="bio">Bio</label>
           </div>
@@ -88,7 +100,8 @@ const UserBioForm = (props) => {
             <button
               type="button"
               disabled={isLoading}
-              onClick={createNewUserBio}
+              onClick={updateExistingUserBio}
+              className="btn btn-primary"
             >
               Submit
             </button>
@@ -99,4 +112,4 @@ const UserBioForm = (props) => {
   );
 };
 
-export default UserBioForm;
+export default UserBioEditForm;

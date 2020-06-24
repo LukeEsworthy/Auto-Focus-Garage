@@ -2,6 +2,7 @@ import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/UserBioHomePage";
 import UserBioForm from "./userBio/UserBioForm";
+import UserBioEditForm from "./userBio/userBioEditForm";
 import CarList from "./cars/CarList";
 import CarForm from "./cars/CarForm";
 import CarDetail from "./cars/CarDetail";
@@ -13,6 +14,10 @@ import LandingPage from "./auth/landingPage";
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
+  let userId = "";
+  if (hasUser) {
+    userId = JSON.parse(sessionStorage.getItem("credentials"));
+  }
 
   return (
     <React.Fragment>
@@ -29,10 +34,26 @@ const ApplicationViews = (props) => {
       />
       <Route
         exact
-        path="/users/new"
+        path="/userBios/new"
         render={(props) => {
           if (hasUser) {
-            return <UserBioForm {...props} />;
+            return <UserBioForm {...props} userId={userId} />;
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      />
+      <Route
+        exact
+        path="/userBios/:userBioId(\d+)/edit"
+        render={(props) => {
+          if (hasUser) {
+            return (
+              <UserBioEditForm
+                {...props}
+                userBioId={parseInt(props.match.params.userBioId)}
+              />
+            );
           } else {
             return <Redirect to="/login" />;
           }
