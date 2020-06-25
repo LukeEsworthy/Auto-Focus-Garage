@@ -3,7 +3,12 @@ import CarManager from "../../modules/CarManager";
 import "./CarForm.css";
 
 const CarEditForm = (props) => {
-  const [car, setCar] = useState({ brandName: "", modelName: "", carInfo: "" });
+  const [car, setCar] = useState({
+    brandName: "",
+    modelName: "",
+    carInfo: "",
+    userId: props.userId,
+  });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = (evt) => {
@@ -21,6 +26,7 @@ const CarEditForm = (props) => {
       brandName: car.brandName,
       modelName: car.modelName,
       carInfo: car.carInfo,
+      userId: props.userId,
     };
 
     CarManager.update(editedCar).then(() => props.history.push("/cars"));

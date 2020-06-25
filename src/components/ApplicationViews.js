@@ -76,7 +76,7 @@ const ApplicationViews = (props) => {
         path="/cars/new"
         render={(props) => {
           if (hasUser) {
-            return <CarForm {...props} />;
+            return <CarForm {...props} userId={userId} />;
           } else {
             return <Redirect to="/login" />;
           }
@@ -96,7 +96,7 @@ const ApplicationViews = (props) => {
         path="/cars/:carId(\d+)/edit"
         render={(props) => {
           if (hasUser) {
-            return <CarEditForm {...props} />;
+            return <CarEditForm {...props} userId={userId} />;
           } else {
             return <Redirect to="/login" />;
           }
