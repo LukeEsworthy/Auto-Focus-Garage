@@ -1,6 +1,8 @@
 import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/UserBioHomePage";
+import UserBioForm from "./userBio/UserBioForm";
+import UserBioEditForm from "./userBio/userBioEditForm";
 import CarList from "./cars/CarList";
 import CarForm from "./cars/CarForm";
 import CarDetail from "./cars/CarDetail";
@@ -8,11 +10,14 @@ import CarEditForm from "./cars/CarEditForm";
 import Login from "./auth/login";
 import Register from "./auth/register";
 import LandingPage from "./auth/landingPage";
-import UserManager from "../modules/UserManager";
 
 const ApplicationViews = (props) => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
+  let userId = "";
+  if (hasUser) {
+    userId = JSON.parse(sessionStorage.getItem("credentials"));
+  }
 
   return (
     <React.Fragment>
@@ -22,6 +27,34 @@ const ApplicationViews = (props) => {
         render={(props) => {
           if (hasUser) {
             return <Home {...props} />;
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      />
+      <Route
+        exact
+        path="/userBios/new"
+        render={(props) => {
+          if (hasUser) {
+            return <UserBioForm {...props} userId={userId} />;
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      />
+      <Route
+        exact
+        path="/userBios/:userBioId(\d+)/edit"
+        render={(props) => {
+          if (hasUser) {
+            return (
+              <UserBioEditForm
+                {...props}
+                userBioId={parseInt(props.match.params.userBioId)}
+                userId={userId}
+              />
+            );
           } else {
             return <Redirect to="/login" />;
           }
@@ -85,7 +118,7 @@ const ApplicationViews = (props) => {
       <Route
         path="/register"
         render={(props) => {
-          return <Register setUser={setUser} {...props} />;
+          return <Register setUser={setUser} {...props} userId={userId} />;
         }}
       />
     </React.Fragment>
