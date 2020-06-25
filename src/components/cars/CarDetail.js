@@ -33,9 +33,9 @@ const CarDetail = (props) => {
   return (
     <div className="card">
       <div className="card-content">
-        {/* <picture>
-                    <img src={require({car.photo}) alt="Car Photo"} />
-                </picture> */}
+        <picture>
+          <img src={car.photo} alt="Car Photo" />
+        </picture>
         <h3>{car.brandName}</h3>
         <h3>{car.modelName}</h3>
         <p>{car.carInfo}</p>

@@ -45,7 +45,7 @@ const UserBioForm = (props) => {
               required
               onChange={handleFieldChange}
               id="name"
-              placeholder="User name"
+              placeholder="Name"
             />
             <label htmlFor="name">Name</label>
             <input

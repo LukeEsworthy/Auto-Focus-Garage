@@ -13,9 +13,8 @@ const CarCard = (props) => {
           Make: <span className="card-carMake">{props.car.brandName}</span>
         </h3>
         <h3>
-          Model: <span className="card=carModel">{props.car.modelName}</span>
+          Model: <span className="card-carModel">{props.car.modelName}</span>
         </h3>
-        <p>{props.car.carInfo}</p>
         <Link to={`/cars/${props.car.id}`}>
           <button>Details</button>
         </Link>
