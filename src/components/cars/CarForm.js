@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./CarFormSearch";
 import PhotoResult from "./CarFormSearchResults";
 import CarManager from "../../modules/CarManager";
-import "./CarForm.css";
+import "./CarCard.css";
 
 const CarForm = (props) => {
   const [picsFromAPI, setPicsFromAPI] = useState([]);

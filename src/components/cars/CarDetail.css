@@ -1,6 +1,9 @@
-#root > .card {
-  max-width: 24%;
+/* .card {
+  display: flex;
   margin: 10px auto;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: stretch;
 }
 
 button:disabled,
@@ -8,3 +11,7 @@ button:disabled:hover {
   background-color: darkgray;
   text-decoration: none;
 }
+
+img {
+  align-content: space-around;
+} */

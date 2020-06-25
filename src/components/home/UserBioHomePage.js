@@ -3,6 +3,7 @@ import UserBioCard from "../userBio/UserBioCard";
 import CarSpotlight from "../cars/CarSpotlight";
 import CarManager from "../../modules/CarManager";
 import UserBioManager from "../../modules/UserBioManager";
+import "./UserBioHomePage.css";
 
 const Home = (props) => {
   const [spotlightId, setSpotlightId] = useState(0);
@@ -34,30 +35,35 @@ const Home = (props) => {
 
   return (
     <>
-      <h2>HOME</h2>
-      <section className="add-bio-button">
-        <button
-          type="button"
-          className="btn"
-          onClick={() => {
-            props.history.push("/userBios/new");
-          }}
-        >
-          Add Bio
-        </button>
-      </section>
-      <div className="bio-card-container">
-        {bios.map((bio) => (
-          <UserBioCard
-            key={bios.id}
-            bio={bio}
-            deleteBio={deleteBio}
-            {...props}
-          />
-        ))}
+      <div className="home-page">
+        <div>
+          <section className="add-bio-button">
+            <button
+              type="button"
+              className="btn"
+              onClick={() => {
+                props.history.push("/userBios/new");
+              }}
+            >
+              Add Bio
+            </button>
+          </section>
+          <div className="bio-card-container">
+            {bios.map((bio) => (
+              <UserBioCard
+                key={bios.id}
+                bio={bio}
+                deleteBio={deleteBio}
+                {...props}
+              />
+            ))}
+          </div>
+        </div>
+        <div>
+          <button onClick={refreshSpotlight}>Shuffle Cars</button>
+          {spotlightId && <CarSpotlight carId={spotlightId} />}
+        </div>
       </div>
-      <button onClick={refreshSpotlight}>Next Car</button>
-      {spotlightId && <CarSpotlight carId={spotlightId} />}
     </>
   );
 };
