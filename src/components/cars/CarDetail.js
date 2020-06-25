@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CarManager from "../../modules/CarManager";
-import "./CarDetail.css";
+import "./CarCard.css";
 
 const CarDetail = (props) => {
   const [car, setCar] = useState({
@@ -32,10 +32,10 @@ const CarDetail = (props) => {
 
   return (
     <div className="card">
+      <picture className="car-detail-photo">
+        <img src={car.photo} alt="Car Photo" />
+      </picture>
       <div className="card-content">
-        <picture>
-          <img src={car.photo} alt="Car Photo" />
-        </picture>
         <h3>{car.brandName}</h3>
         <h3>{car.modelName}</h3>
         <p>{car.carInfo}</p>

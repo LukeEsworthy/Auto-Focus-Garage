@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CarCard from "./CarCard";
 import CarManager from "../../modules/CarManager";
+import "./CarCard.css";
 
 const CarList = (props) => {
   const [cars, setCars] = useState([]);

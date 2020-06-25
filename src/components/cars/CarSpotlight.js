@@ -23,10 +23,10 @@ const CarSpotlight = (props) => {
 
   return (
     <div className="card">
+      <picture>
+        <img src={car.photo} alt="Image not available" />
+      </picture>
       <div className="card-content">
-        <picture>
-          <img src={car.photo} alt="Image not available" />
-        </picture>
         <h3>
           Make: <span className="card-carMake">{car.brandName}</span>
         </h3>

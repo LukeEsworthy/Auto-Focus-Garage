@@ -1,4 +1,4 @@
-.card {
+/* .card {
   display: flex;
   margin: 10px auto;
   justify-content: space-between;
@@ -12,3 +12,6 @@ button:disabled:hover {
   text-decoration: none;
 }
 
+img {
+  align-content: space-around;
+} */
