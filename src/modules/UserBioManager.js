@@ -21,4 +21,18 @@ export default {
       body: JSON.stringify(newUserBio),
     }).then((data) => data.json());
   },
+  update(editedUserBio) {
+    return fetch(`${remoteURL}/userBios/${editedUserBio.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(editedUserBio),
+    }).then((data) => data.json());
+  },
+  delete(id) {
+    return fetch(`${remoteURL}/userBios/${id}`, {
+      method: "DELETE",
+    }).then((result) => result.json());
+  },
 };

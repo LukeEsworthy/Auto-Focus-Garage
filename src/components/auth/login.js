@@ -3,7 +3,7 @@ import UserManager from "../../modules/UserManager";
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({
-    userName: "",
+    username: "",
     password: "",
   });
 
@@ -15,7 +15,7 @@ const Login = (props) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    UserManager.getUserByUsername(credentials.userName).then((result) => {
+    UserManager.getUserByUsername(credentials.username).then((result) => {
       if (result[0].password === credentials.password) {
         props.setUser(result[0].id);
         props.history.push("/home");
@@ -32,13 +32,13 @@ const Login = (props) => {
         <div className="formgrid">
           <input
             onChange={handleFieldChange}
-            type="userName"
-            id="userName"
+            type="username"
+            id="username"
             placeholder="Username"
             required=""
             autoFocus=""
           />
-          <label htmlFor="inputUserName">Username</label>
+          <label htmlFor="inputUsername">Username</label>
 
           <input
             onChange={handleFieldChange}

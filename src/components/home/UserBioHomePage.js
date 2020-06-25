@@ -20,6 +20,10 @@ const Home = (props) => {
     });
   };
 
+  const deleteBio = (id) => {
+    UserBioManager.delete(id).then(() => getBios());
+  };
+
   useEffect(() => {
     getBios();
   }, []);
@@ -44,7 +48,12 @@ const Home = (props) => {
       </section>
       <div className="bio-card-container">
         {bios.map((bio) => (
-          <UserBioCard key={bios.id} bio={bio} {...props} />
+          <UserBioCard
+            key={bios.id}
+            bio={bio}
+            deleteBio={deleteBio}
+            {...props}
+          />
         ))}
       </div>
       <button onClick={refreshSpotlight}>Next Car</button>

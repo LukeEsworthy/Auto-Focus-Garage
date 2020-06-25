@@ -52,6 +52,7 @@ const ApplicationViews = (props) => {
               <UserBioEditForm
                 {...props}
                 userBioId={parseInt(props.match.params.userBioId)}
+                userId={userId}
               />
             );
           } else {
@@ -117,7 +118,7 @@ const ApplicationViews = (props) => {
       <Route
         path="/register"
         render={(props) => {
-          return <Register setUser={setUser} {...props} />;
+          return <Register setUser={setUser} {...props} userId={userId} />;
         }}
       />
     </React.Fragment>

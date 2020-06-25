@@ -19,8 +19,6 @@ const UserBioForm = (props) => {
     setUserBio(stateToChange);
   };
 
-  /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
-   */
   const createNewUserBio = (evt) => {
     evt.preventDefault();
     if (
@@ -33,7 +31,6 @@ const UserBioForm = (props) => {
       window.alert("Please fill out all sections; we want to get to know you!");
     } else {
       setIsLoading(true);
-      // Create the animal and redirect user to animal list
       UserBioManager.post(userBio).then(() => props.history.push("/home"));
     }
   };

@@ -4,17 +4,7 @@ import "./UserBioCard.css";
 const UserBioCard = (props) => {
   return (
     <>
-      <section>
-        {/* <button
-          type="button"
-          className="btn"
-          onClick={() => {
-            props.history.push("/users/new");
-          }}
-        >
-          Edit Bio
-        </button> */}
-      </section>
+      <section></section>
       <div className="card">
         <div className="card-content">
           <h5>
@@ -38,6 +28,9 @@ const UserBioCard = (props) => {
           onClick={() => props.history.push(`/userBios/${props.bio.id}/edit`)}
         >
           Edit
+        </button>
+        <button type="button" onClick={() => props.deleteBio(props.bio.id)}>
+          Delete
         </button>
       </div>
     </>

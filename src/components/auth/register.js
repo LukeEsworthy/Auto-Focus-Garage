@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import UserManager from "../../modules/UserManager";
 
 const Register = (props) => {
-  const [user, setUser] = useState({ userName: "", password: "" });
+  const [user, setUser] = useState({ username: "", password: "" });
   const [credentials, setCredentials] = useState({
-    userName: "",
+    username: "",
     password: "",
   });
 
@@ -17,7 +17,7 @@ const Register = (props) => {
 
   const constructNewUser = (event) => {
     event.preventDefault();
-    if (user.userName === "" || user.password === "") {
+    if (user.username === "" || user.password === "") {
       window.alert("Please enter a Username and Password");
     } else {
       props.setUser(credentials);
@@ -32,13 +32,13 @@ const Register = (props) => {
         <div className="formgrid">
           <input
             onChange={handleFieldChange}
-            type="userName"
-            id="userName"
+            type="username"
+            id="username"
             placeholder="Username"
             required=""
             autoFocus=""
           />
-          <label htmlFor="inputUserName">Username</label>
+          <label htmlFor="inputUsername">Username</label>
 
           <input
             onChange={handleFieldChange}

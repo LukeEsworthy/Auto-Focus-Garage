@@ -31,6 +31,7 @@ const UserBioEditForm = (props) => {
       equipment: userBio.equipment,
       faveCar: userBio.faveCar,
       bio: userBio.bio,
+      userId: props.userId,
     };
 
     UserBioManager.update(editedUserBio).then(() =>
@@ -40,7 +41,7 @@ const UserBioEditForm = (props) => {
 
   useEffect(() => {
     UserBioManager.get(props.match.params.userBioId).then((userBio) => {
-      setUserBio(userBioId);
+      setUserBio(userBio);
       setIsLoading(false);
     });
   }, []);
