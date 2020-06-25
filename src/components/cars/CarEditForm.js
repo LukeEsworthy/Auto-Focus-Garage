@@ -8,6 +8,7 @@ const CarEditForm = (props) => {
     modelName: "",
     carInfo: "",
     userId: props.userId,
+    photo: "",
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,6 +28,7 @@ const CarEditForm = (props) => {
       modelName: car.modelName,
       carInfo: car.carInfo,
       userId: props.userId,
+      photo: car.photo,
     };
 
     CarManager.update(editedCar).then(() => props.history.push("/cars"));
