@@ -34,7 +34,7 @@ const Home = (props) => {
 
   return (
     <>
-      <h2>I will put UserBioCard and random rotating CarCards here</h2>
+      <h2>HOME</h2>
       <section className="add-bio-button">
         <button
           type="button"
