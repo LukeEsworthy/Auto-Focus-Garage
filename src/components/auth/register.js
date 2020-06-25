@@ -2,26 +2,27 @@ import React, { useState } from "react";
 import UserManager from "../../modules/UserManager";
 
 const Register = (props) => {
-  const [user, setUser] = useState({ username: "", password: "" });
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
   });
 
   const handleFieldChange = (evt) => {
-    const stateToChange = { ...user, ...credentials };
+    const stateToChange = { ...credentials };
     stateToChange[evt.target.id] = evt.target.value;
-    setUser(stateToChange);
     setCredentials(stateToChange);
   };
 
   const constructNewUser = (event) => {
     event.preventDefault();
-    if (user.username === "" || user.password === "") {
+    if (credentials.username === "" || credentials.password === "") {
       window.alert("Please enter a Username and Password");
     } else {
-      props.setUser(credentials);
-      UserManager.post(user).then(() => props.history.push("/home"));
+      // Should check if user exists already, handle either case
+      UserManager.post(credentials).then((returnedUserObj) => {
+        props.setUser(returnedUserObj.id);
+        props.history.push("/home");
+      });
     }
   };
 

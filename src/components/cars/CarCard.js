@@ -6,6 +6,9 @@ const CarCard = (props) => {
   return (
     <div className="card">
       <div className="card-content">
+        <picture>
+          <img src={props.car.photo} alt="Photo Unavailable" />
+        </picture>
         <h3>
           Make: <span className="card-carMake">{props.car.brandName}</span>
         </h3>
