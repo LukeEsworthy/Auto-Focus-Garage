@@ -22,7 +22,7 @@
       "name": "Luke Esworthy",
       "location": "Nashville area",
       "equipment": "Canon Rebel T3i, 50mm prime, 70-200mm, 18-50mm, Røde stereo mic, Audio Technica pro stereo mic, iPhone Xs Max",
-      "faveCar": "Ferrari 430 Scuderia 16M",
+      "faveCar": "Ferrari 430 Scuderia Spider 16M",
       "bio": "Bio: My passion for cars (or really anything with a motor) started when I was around 10. I begged my dad to let me start mowing the grass so that I could drive the riding lawn mower. When he finally gave in, we had to wrap iron chains around the seat because I didn't weigh enough and without the chain, the mower's safety sensor would cut the engine off. I finally got behind the wheel of a car when I was 14 and that excitement has never gone away. I have been fortunate to have driven and worked on a lot of different cars, and through that have grown an immense appreciation to the design and engineering put into cars. Cars truly are art, and they invoke many different emotions. The look, the sound, the feeling of smooth, cool, shiny metal and g-forces pushing you back into the seat, the smell of gasoline, exhaust and burnt rubber. Some of the best things in my life have happened in, around or because of cars, and those memories are ones that I will hold on to forever.",
       "userId": 1
     },
@@ -71,14 +71,6 @@
       "userId": 1
     },
     {
-      "id": 4,
-      "photo": "https://images.unsplash.com/photo-1592199299806-e7349699f6a9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0MTUzM30",
-      "brandName": "McLaren",
-      "modelName": "P1",
-      "carInfo": "The first time I saw a McLaren P1 was when I drove down to Atlanta, GA in June 2014 to see the Gumball 3000 during their rally from Miami to Ibiza. This was special because I came from Knoxville and my dad met me from Nashville, and we made it a guys' trip. We ogled at the cars the night they came in, went and grabbed some food and beer, and then woke up early the next morning to ogle at the cars some more as they headed out.",
-      "userId": 1
-    },
-    {
       "brandName": "Bugatti",
       "modelName": "Chiron",
       "carInfo": "The first time I saw a Bugatti Chiron was in April 2019. I was on a road trip with my girlfriend, going through Texas. The morning we left Houston to head to Galveston, we stopped by Ferrari of Houston because, well, I wanted to check out the Ferraris they had, and I also heard they had a Chiron. Turns out, they did, and it was probably my favorite Chiron spec I could imagine. The gentleman whose desk was right beside the Chiron was incredibly friendly and welcoming, and chatted to us for a while about it while he let us look it over. Another amazing dealership experience and absolutely stunning car, specced in Royal Blue visible carbon, black wheels, and Italian Red interior.",
@@ -109,6 +101,14 @@
       "carInfo": "I'm a Tifosi through and through, but as far as attainable cars go, I'm also a huge BMW fan. If a car comes in a coupe and sedan, there's a 99% chance that I prefer the sedan over the coupe, and the F80 is no exception! Even though this is an F82 (coupe) it is one of my favorites, and the special CS (and in my favorite blue) is a dream!",
       "userId": 1,
       "photo": "https://images.unsplash.com/photo-1528597469186-bddab681a37f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0MTUzM30"
+    },
+    {
+      "id": 9,
+      "brandName": "McLaren",
+      "modelName": "P1",
+      "carInfo": "The first time I saw a McLaren P1 was when I drove down to Atlanta, GA in June 2014 to see the Gumball 3000 during their rally from Miami to Ibiza. This was special because I came from Knoxville and my dad met me from Nashville, and we made it a guys' trip. We ogled at the cars the night they came in, went and grabbed some food and beer, and then woke up early the next morning to ogle at the cars some more as they headed out.",
+      "userId": 1,
+      "photo": "https://images.unsplash.com/photo-1592199299806-e7349699f6a9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0MTUzM30"
     }
   ]
 }
