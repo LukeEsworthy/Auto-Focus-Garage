@@ -87,14 +87,14 @@ const UserBioEditForm = (props) => {
               value={userBio.faveCar}
             />
             <label htmlFor="faveCar">Favorite Car</label>
-            <input
+            <textarea
               type="text"
               required
               className="form-control"
               onChange={handleFieldChange}
               id="bio"
               value={userBio.bio}
-            />
+            ></textarea>
             <label htmlFor="bio">Bio</label>
           </div>
           <div className="alignRight">

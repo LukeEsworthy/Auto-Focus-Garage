@@ -64,14 +64,15 @@ const CarEditForm = (props) => {
               value={car.modelName}
             />
             <label htmlFor="modelName">Model</label>
-            <input
+            <textarea
               type="text"
               required
               className="form-control"
               onChange={handleFieldChange}
               id="carInfo"
               value={car.carInfo}
-            />
+            >
+            </textarea>
             <label htmlFor="carInfo">Info</label>
           </div>
           <div className="alignRight">

@@ -72,13 +72,14 @@ const UserBioForm = (props) => {
               placeholder="Favorite Car"
             />
             <label htmlFor="faveCar">Favorite Car</label>
-            <input
+            <textarea
               type="text"
               required
               onChange={handleFieldChange}
               id="bio"
               placeholder="Bio"
-            />
+            >
+            </textarea>
             <label htmlFor="bio">Bio</label>
           </div>
           <div className="alignRight">

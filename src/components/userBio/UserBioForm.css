@@ -9,6 +9,7 @@ fieldset {
 }
 
 fieldset input,
+fieldset textarea,
 fieldset button,
 fieldset select {
   box-sizing: border-box;
@@ -53,13 +54,19 @@ fieldset .formgrid {
 }
 
 fieldset input,
+fieldset textarea,
 fieldset button,
 fieldset select {
   grid-column: 2 /4;
   width: auto;
-  margin: 0;
+  margin: 5px;
 }
 
 fieldset .alignRight {
   text-align: right;
+}
+
+fieldset textarea {
+  width: auto;
+  height: 200px;
 }
