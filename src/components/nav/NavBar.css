@@ -36,11 +36,13 @@ nav .container li {
 
 img {
   max-width: 200px;
-  padding: 30px;
+  padding: 50px;
 }
 
 .logo-and-title {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: flex-end;
 }
+
