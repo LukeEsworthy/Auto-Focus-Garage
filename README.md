@@ -11,11 +11,11 @@ Auto Focus Garage was conceived and built by a car enthusiast for car enthusiast
 Get this app running on your local machine:
 
 1. Clone this repo to your machine
-   `git clone https://github.com/LukeEsworthy/Auto-Focus-Garage.git`
+   -`git clone https://github.com/LukeEsworthy/Auto-Focus-Garage.git`
 2. `cd` into "autofocusgarage"
 3. You will need an API key from [Unsplash](https://unsplash.com/). Click the link and follow the directions on the website to create an account to get your own API key.
 4. In the `src` folder, create a file called `APIKeys.js`
-   `cd src`
+   -`cd src`
    `touch APIKeys.js`
 5. Create and export a variable `UnsplashAPIKey` and give it the value of your unique API key from Unsplash.
    `const UnsplashAPIKey = "YOUR-API-KEY-HERE";`
